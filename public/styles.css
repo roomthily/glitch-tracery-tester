@@ -1,0 +1,37 @@
+#rolling {
+  display: grid;
+  grid-template-columns: repeat(3, [col] 180px );
+  grid-gap:20px;
+  max-width: 250px;
+}
+
+#rolling div {
+  background-color:#92b8dd;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 150%;
+  letter-spacing: 1rem;
+  padding: 1em;
+}
+
+
+body {
+  margin: 20px 100px;
+}
+header {
+  font-size: 125%;
+  border-bottom: 1px solid #eee;
+  margin-bottom:30px;
+}
+
+/* header {
+  font-size: 125%;
+  border-bottom: 1px solid #eee;
+  margin-bottom:30px;
+  width:100%;
+}
+
+body {
+  display: grid;
+  justify-items:center;
+  grid-template-column: 1fr;
+} */

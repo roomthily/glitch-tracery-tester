@@ -1,0 +1,25 @@
+{
+  "name": "tracery-tester",
+  "version": "1.0.0",
+  "description": "tracery tester",
+  "main": "tracery tester",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "author": "soren",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.x",
+    "node-persist": "2.x",
+    "tracery-grammar": "2.x",
+    "body-parser": "^1.17.2",
+    "express-formidable": "^1.0.0"
+  },
+  "engines": {
+    "node": "6.9.x"
+  },
+  "repository": {
+    "type": "glitch",
+    "url": "https://glitch.com/edit/#!/tracery-twitter-bot"
+  }
+}
