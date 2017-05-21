@@ -1,8 +1,8 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
     formidable = require("express-formidable"),
-    //twitter = require('./twitter.js'), // this require() will log an error if you don't have your .env file setup correctly
-    grammar = require('./public/tracery.js').grammar; 
+    grammars = require('./public/tracery.js');
+    //grammar = require('./public/tracery.js').grammar; 
 
 require('events').EventEmitter.defaultMaxListeners = 0
 
@@ -29,18 +29,31 @@ app.get('/roll', (req, res) => {
     return;
   }
   
+  // it is okay to be undefined
+  var gram = req.query.grammar;
+  
   var responses = {};
   for (var i=0; i < n; i++) {
     console.log('hi');
-    responses[i] = generateStatus();
+    responses[i] = generateStatus(gram);
   }
   
   res.json(responses);
 });
 
-function generateStatus() {
+function generateStatus(grammar) {
   // Generate a new tweet using our grammar
-  return grammar.flatten("#origin#"); // make sure an "origin" entry is in your grammar.json file
+  // make sure an "origin" entry is in your grammar.json file, *any* grammar file
+  var g;
+  if (grammar === undefined) {
+    console.log("rolling default");
+    g = grammars.grammar; 
+  } else {
+    console.log("rolling " + grammar);
+    g = grammars.use_grammar(grammar);
+  }
+  return g.flatten("#origin#");
+  
 }
 
 // listen for requests :)

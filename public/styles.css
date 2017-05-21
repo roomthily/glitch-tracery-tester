@@ -1,6 +1,6 @@
 #rolling {
   display: grid;
-  grid-template-columns: repeat(3, [col] 180px );
+  grid-template-columns: repeat(3, [col] fit-content(50%) );
   grid-gap:20px;
   max-width: 250px;
 }
@@ -22,16 +22,3 @@ header {
   border-bottom: 1px solid #eee;
   margin-bottom:30px;
 }
-
-/* header {
-  font-size: 125%;
-  border-bottom: 1px solid #eee;
-  margin-bottom:30px;
-  width:100%;
-}
-
-body {
-  display: grid;
-  justify-items:center;
-  grid-template-column: 1fr;
-} */
