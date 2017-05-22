@@ -5,10 +5,20 @@ $(function() {
     event.preventDefault();
     
     var n = $('#counting').val();
+    var g = $('#grammar').val();
+    
+    var data = {
+      "counting": n
+    };
+    if (g != 'default') {
+        data["grammar"] = g;
+    }
+    
+    console.log("grammar: " + g);
 
     $.get({
       url: '/roll',
-      data: {"counting": n},
+      data: data,
       success: function(response) {
         var txt = '';
         var values = $.map(response, function(value, key) { return value });
