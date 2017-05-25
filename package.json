@@ -13,7 +13,11 @@
     "node-persist": "2.x",
     "tracery-grammar": "2.x",
     "body-parser": "^1.17.2",
-    "express-formidable": "^1.0.0"
+    "express-formidable": "^1.0.0",
+    "node-random": "^1.0.1",
+    "object.entries": "^1.0.4",
+    "weighted": "^0.3.0",
+    "zipfian": "^0.2.0"
   },
   "engines": {
     "node": "6.9.x"
