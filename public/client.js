@@ -27,6 +27,10 @@ $(function() {
           txt += `<div>${y}</div>`;
         });
         $('#rolling').html(txt);
+        
+        if (g === 'default') {
+          $('#rolling div').toggleClass('default');  
+        }
       }
     })
 

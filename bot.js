@@ -1,8 +1,10 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
     formidable = require("express-formidable"),
-    grammars = require('./public/tracery.js');
-    //grammar = require('./public/tracery.js').grammar; 
+    grammars = require('./public/tracery.js'),
+    keyboard = require('./public/randomkeyboard.js'),
+    over_keyboard = require('./public/overengineered-keyboard.js'),
+    wrappers = require('./public/wrappers.js'); 
 
 require('events').EventEmitter.defaultMaxListeners = 0
 
@@ -39,6 +41,27 @@ app.get('/roll', (req, res) => {
   }
   
   res.json(responses);
+});
+
+app.get('/catboard', (req, res) => {
+  // a cat walks across the keyboard
+  try {
+    var cat = keyboard.generate();
+    console.log('cat?', cat);
+  } catch(e) {
+    console.log(e);
+  }
+  res.json({"1": cat});
+});
+
+app.get('/keyboard', (req, res) => {
+  try {
+    // create a fake commit, glitch style (with emoji!)
+    var result = over_keyboard.generate();
+    res.json({"generated": wrappers.emoji_start(2, result)});
+  } catch(e) {
+    console.log(e);
+  }
 });
 
 function generateStatus(grammar) {
