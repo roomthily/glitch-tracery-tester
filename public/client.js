@@ -14,10 +14,15 @@ $(function() {
         data["grammar"] = g;
     }
     
-    console.log("grammar: " + g);
+    var url = '/roll';  // for tracery bots
+    
+    if (['cat-keyboard'].includes(g)) {
+      // for special flower bots
+      url = '/keyboard';
+    }
 
     $.get({
-      url: '/roll',
+      url: url,
       data: data,
       success: function(response) {
         var txt = '';
