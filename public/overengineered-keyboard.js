@@ -1,6 +1,4 @@
-var crypto = require('crypto'),
-    entries = require('object.entries'),
-    weighted = require('weighted'),
+var weighted = require('weighted'),
     zipfs = require('zipfian').ZipfianGenerator;
 
 function generate() {
@@ -25,11 +23,11 @@ function generate() {
     ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'],
     ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{', '}', '|'],
     ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', '"', '\n'],
-    ['Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?'],
+    ['Z', 'X', 'C', 'V', 'B', 'N', 'M',  '?'], //'<', '>', (removed bc it's not html-encoded)
     [' ', ' ', ' ', ' ', ' ']
   ];
   
-  var total_len = _rnd_int(30, 120);
+  var total_len = _rnd_int(5, 120);
   var charsets_wgts = _rnd_weights(charsets.length);
   
   // prep the weights for the charsets
@@ -78,6 +76,7 @@ function generate() {
       total_len -= num_chars;
     });
   }
+  
   return output;
 }
 
