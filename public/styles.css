@@ -1,5 +1,6 @@
 body {
   margin: 20px 100px;
+  width:auto;
 }
 header {
   font-size: 125%;
@@ -7,16 +8,16 @@ header {
   margin-bottom:30px;
 }
 
-/** not a generic design, fyi. **/
 #rolling {
   display: grid;
-  grid-template-columns: repeat(3, [col] fit-content(50%) );
-  grid-gap:20px;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap:1.5rem;
 }
 
 #rolling div {
   background-color:#92b8dd;
   padding: 1em;
+  overflow-wrap: break-word;
 }
 
 #rolling .default {
