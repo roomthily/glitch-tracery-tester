@@ -1,0 +1,69 @@
+// sass styles to handle the color background
+
+@import 'https://fonts.googleapis.com/css?family=Raleway|Titillium+Web|Source+Code+Pro';
+
+// set up the colors
+$color-1: rgb(176, 226, 221);
+$color-2: adjust-hue($color-1, 120%);
+$steps: 9;
+
+$color-3: #424242; //desaturate($color-2, 70%);
+
+// Mix colors to go from $color-1 to @color-2 with 9 total steps, 
+// repeating every nth element at step i
+@for $i from 0 to $steps {
+  .results div:nth-of-type(#{$steps}n+#{$i}) {
+		background: mix($color-1, $color-2, percentage($i / ($steps - 1)));
+	}
+}
+
+
+body {
+  margin: 0 auto;
+  background: $color-3;
+}
+
+main {
+  display:grid;
+  grid-template-columns: 30vw 1fr;
+  font-family:Titillium Web, sans-serif;
+}
+
+.options {
+  color: #fff;  
+  padding: 1.4rem;
+}
+
+header {
+  font-size: 125%;
+  border-bottom: 1px solid #fff;
+  margin-bottom:30px;
+}
+
+.results {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap:3px;
+}
+
+.results div {
+  padding:1.4rem;
+  overflow-wrap: break-word;
+}
+
+#results .default {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 150%;
+  letter-spacing: 1rem;
+  // max-width: 200px;
+}
+
+// this is still wonky
+@media (max-width:800px) {
+  main {
+    grid-template-columns: 40vw 1fr;
+  }
+  .results {
+    grid-template-columns: 1fr;
+  }
+}

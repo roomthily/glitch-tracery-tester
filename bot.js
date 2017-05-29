@@ -3,7 +3,8 @@ var express = require('express'),
     formidable = require("express-formidable"),
     grammars = require('./public/tracery.js'),
     over_keyboard = require('./public/overengineered-keyboard.js'),
-    wrappers = require('./public/wrappers.js'); 
+    wrappers = require('./public/wrappers.js'),
+    sassMiddleware = require("node-sass-middleware"); 
 
 require('events').EventEmitter.defaultMaxListeners = 0
 
@@ -12,9 +13,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); 
 app.use(formidable());
 
+app.use(sassMiddleware({
+  src: __dirname + '/public',
+  dest: '/tmp'
+}));
 
 app.use(express.static('public')); // serve static files like index.html http://expressjs.com/en/starter/static-files.html
 
+app.use(express.static('/tmp'));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
