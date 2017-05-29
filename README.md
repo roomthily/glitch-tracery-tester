@@ -13,3 +13,11 @@ Or!
 It does not tweet or toot or any of those things, but will generate some number of responses from the grammar for testing.
 
 Example grammar in grammars cobbled together from tinysubversion's [corpora](https://github.com/dariusk/corpora) dataset
+
+###TODOs
+
+🔜 add svg generator
+
+🔜 random card background-color
+
+🔜 the default bot favors the first column which is odd based on the stated statistical qualities of tracery.

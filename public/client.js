@@ -31,10 +31,10 @@ $(function() {
           var y = v.replace(/\n/g, "<br />");
           txt += `<div>${y}</div>`;
         });
-        $('#rolling').html(txt);
+        $('.results').html(txt);
         
         if (g === 'default') {
-          $('#rolling div').toggleClass('default');  
+          $('.results div').toggleClass('default');  
         }
       }
     })
