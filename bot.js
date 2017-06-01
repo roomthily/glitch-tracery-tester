@@ -62,7 +62,12 @@ app.get('/keyboard', (req, res) => {
 });
 
 app.get('/buzz', (req, res) => {
-  res.json({content: intlbee.generate()});
+  var n = req.query.counting != undefined ? req.query.counting  : 1;
+  var responses = {};
+  for (var i=0; i<n; i++) {
+    responses[i] = intlbee.generate();
+  }
+  res.json(responses);
 });
 
 function generateStatus(grammar) {

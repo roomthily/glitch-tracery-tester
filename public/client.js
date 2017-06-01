@@ -19,6 +19,8 @@ $(function() {
     if (['cat-keyboard'].includes(g)) {
       // for special flower bots
       url = '/keyboard';
+    } else if (['international-bees'].includes(g)) {
+      url = '/buzz';
     }
 
     $.get({
