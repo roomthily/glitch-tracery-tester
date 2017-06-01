@@ -1,8 +1,8 @@
-Create a generative Twitter bot using [Tracery](http://tracery.io/). 
+## A bot playground that shouldn't be used by anyone
 
-This is a version of [Cheap Bots, Done Quick!](http://cheapbotsdonequick.com/) that runs as a single bot. It is based on [v21/tracerybot](http://github.com/v21/tracerybot). 
+Widget to play with [Tracery](http://tracery.io/) grammars or other generative things. 
 
-How to build your own bot:
+Remixing:
 - Click the settings above and "Remix" this project!
 - Modify the [Tracery](http://tracery.io/) grammar in `grammar.json`. Here's a [tutorial](http://www.crystalcodepalace.com/traceryTut.html). The output will start from field "origin".
 
@@ -14,10 +14,8 @@ It does not tweet or toot or any of those things, but will generate some number 
 
 Example grammar in grammars cobbled together from tinysubversion's [corpora](https://github.com/dariusk/corpora) dataset
 
-###TODOs
+### TODOs
 
 🔜 add svg generator
-
-🔜 random card background-color
 
 🔜 the default bot favors the first column which is odd based on the stated statistical qualities of tracery.

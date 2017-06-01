@@ -18,7 +18,8 @@
     "object.entries": "^1.0.4",
     "weighted": "^0.3.0",
     "zipfian": "^0.2.0",
-    "node-sass-middleware": "^0.11.0"
+    "node-sass-middleware": "^0.11.0",
+    "handlebartender": "^1.0.1"
   },
   "engines": {
     "node": "6.9.x"

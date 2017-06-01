@@ -3,6 +3,7 @@ var express = require('express'),
     formidable = require("express-formidable"),
     grammars = require('./public/tracery.js'),
     over_keyboard = require('./public/overengineered-keyboard.js'),
+    intlbee = require('./public/international-bees.js'),
     wrappers = require('./public/wrappers.js'),
     sassMiddleware = require("node-sass-middleware"); 
 
@@ -58,6 +59,10 @@ app.get('/keyboard', (req, res) => {
   } catch(e) {
     console.log(e);
   }
+});
+
+app.get('/buzz', (req, res) => {
+  res.json({content: intlbee.generate()});
 });
 
 function generateStatus(grammar) {
