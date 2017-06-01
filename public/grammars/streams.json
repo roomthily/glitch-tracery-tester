@@ -1,0 +1,34 @@
+{
+  "origin": [
+    "#roaring# #burbling# #roaring# #roaring#",
+    "#burbling# #burbling# #sluicing# #roaring#",
+    "#roaring# #sluicing# #sluicing# #roaring# #ice_cracks#",
+    "",
+    "",
+    ""  
+  ],
+  "burbling": [
+    "plock", "tink", "bllgh", "glop", "thock",
+    "shuh", "burble", "gurgle", "tick", "ploop",
+    "schlip", "schloop", "tluck", "tlock", "splut",
+    "freh", "twock", "plip", "bubble", "zu", "zub",
+    "whorp", "zuh", "fwaaaaa", "flur", "glu", "gru",
+    "gworp", "dibble", "doop", "dop", "za za", 
+    "potsu potsu"
+  ],
+
+  "roaring": [
+    "goro goro"
+  ],
+  "sluicing": [
+    "swish", "swoooooosh",
+    "shuuuuuuuuuuurp", "sui", "sura-sura", "sui-sui-sui",
+    "hyu hyu", "saku saku", 
+  ],
+  "ice_cracks":[
+    "gween", "chunk", "thock", "thwick", ""
+  ],
+  "sounds": [
+    "spang"
+  ]
+}
